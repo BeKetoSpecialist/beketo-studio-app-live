@@ -40,6 +40,11 @@ Program jest niepodpisany (wewnętrzny, bez płatnego certyfikatu Apple/Microsof
 > To usuwa flagę kwarantanny — plik nie jest uszkodzony, to tylko ostrzeżenie systemu dla
 > niepodpisanych aplikacji.
 
-## Aktualizacje — automatyczne
-Po zainstalowaniu program **sam sprawdza i pobiera nowe wersje** przy uruchomieniu.
-Nie musisz nic robić ani instalować ponownie — wystarczy normalnie korzystać z aplikacji.
+## Aktualizacje
+**Windows — automatyczne.** Program sam sprawdza i pobiera nowe wersje przy uruchomieniu.
+Nie musisz nic robić — wystarczy normalnie korzystać z aplikacji.
+
+**Mac — półautomatyczne.** Aplikacja sama wykryje nową wersję i pokaże baner z przyciskiem
+**„Otwórz stronę pobierania"** — pobierasz nowy `.dmg` i instalujesz jak za pierwszym razem
+(prawy przycisk na „Zainstaluj (kliknij 2x)" → Otwórz). W pełni cicha aktualizacja na macOS
+wymaga płatnego certyfikatu Apple, którego świadomie nie używamy w aplikacji wewnętrznej.
