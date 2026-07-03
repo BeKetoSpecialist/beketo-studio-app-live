@@ -22,29 +22,26 @@ Program jest niepodpisany (wewnętrzny, bez płatnego certyfikatu Apple/Microsof
 
 **Windows:** „Więcej informacji" → „Uruchom mimo to".
 
-**Mac (od wersji 0.2.3):**
-1. Otwórz pobrany `.dmg` (dwuklik).
-2. W oknie, które się otworzy, kliknij **prawym przyciskiem** na `Zainstaluj (kliknij 2x).command` → **Otwórz** → w oknie systemowym potwierdź jeszcze raz **Otwórz**.
-3. Gotowe — aplikacja instaluje się do Programów i uruchamia sama.
+**Mac — pierwsza instalacja (jednorazowo na komputer):**
+1. Otwórz pobrany `.dmg` i przeciągnij **BeKeto Studio** do **Applications** (Programy).
+2. Otwórz **Terminal** (Launchpad → wpisz „Terminal"), wklej i zatwierdź Enterem:
+   ```
+   xattr -cr "/Applications/BeKeto Studio.app"
+   ```
+3. Uruchom BeKeto Studio normalnie (dwuklik). Gotowe.
 
-> Dlaczego prawy przycisk, a nie zwykły dwuklik? macOS ostrzega przy pierwszym uruchomieniu
-> czegokolwiek niepodpisanego pobranego z internetu — to jednorazowe, kolejne uruchomienia
-> (i aktualizacje) już o to nie pytają.
->
-> **Jeśli mimo to zobaczysz „Rzecz «BeKeto Studio» jest uszkodzona"** (starsza instalka albo
-> Mac na Apple Silicon bywa surowszy): przeciągnij `BeKeto Studio.app` do Programów, otwórz
-> **Terminal** i wklej:
-> ```
-> xattr -cr "/Applications/BeKeto Studio.app"
-> ```
-> To usuwa flagę kwarantanny — plik nie jest uszkodzony, to tylko ostrzeżenie systemu dla
-> niepodpisanych aplikacji.
+> Skąd ta komenda? Aplikacja jest niepodpisana (nie płacimy Apple $99/rok za certyfikat dla
+> narzędzia wewnętrznego), a Safari oznacza każdy pobrany plik flagą kwarantanny — macOS
+> pokazuje wtedy mylący błąd „Rzecz jest uszkodzona". Komenda zdejmuje flagę; plik jest cały.
+> Na nowszych macOS (15+) sztuczki „prawy przycisk → Otwórz" już nie działają, więc Terminal
+> to najpewniejsza droga. **Od wersji 0.2.8 robisz to tylko RAZ** — kolejne aktualizacje
+> aplikacja pobiera i instaluje sama (patrz niżej).
 
-## Aktualizacje
-**Windows — automatyczne.** Program sam sprawdza i pobiera nowe wersje przy uruchomieniu.
-Nie musisz nic robić — wystarczy normalnie korzystać z aplikacji.
+## Aktualizacje — automatyczne (Windows i Mac)
+Program sam sprawdza i pobiera nowe wersje przy uruchomieniu — wystarczy normalnie korzystać
+z aplikacji i kliknąć „Uruchom ponownie teraz", gdy pojawi się baner.
 
-**Mac — półautomatyczne.** Aplikacja sama wykryje nową wersję i pokaże baner z przyciskiem
-**„Otwórz stronę pobierania"** — pobierasz nowy `.dmg` i instalujesz jak za pierwszym razem
-(prawy przycisk na „Zainstaluj (kliknij 2x)" → Otwórz). W pełni cicha aktualizacja na macOS
-wymaga płatnego certyfikatu Apple, którego świadomie nie używamy w aplikacji wewnętrznej.
+> Mac: automatyczne aktualizacje działają od wersji **0.2.8** (aplikacja pobiera je sama,
+> więc macOS nie nakłada kwarantanny). Jeśli masz starszą wersję — zrób raz „pierwszą
+> instalację" wg instrukcji wyżej. Gdyby automatyczna aktualizacja kiedyś się nie powiodła
+> (np. brak uprawnień do Programów), aplikacja pokaże baner z linkiem do ręcznego pobrania.
